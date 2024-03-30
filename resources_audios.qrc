@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/Sounds">
+        <file>chicken sound.mp3</file>
+        <file>gameover sound.mp3</file>
+        <file>laser sound.mp3</file>
+    </qresource>
+</RCC>
