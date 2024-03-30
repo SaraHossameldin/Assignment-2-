@@ -1,25 +1,22 @@
 
 #include "enemy.h"
-#include <QMediaPlayer>
+//#include <QMediaPlayer>
 
 
-Enemy::Enemy(Player* p)
+Enemy::Enemy(Player *)
 {
     //to add the sound
-    gameoversound = new QMediaPlayer();
-    gameoversound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\gameover sound.mp3");
+   // gameoversound = new QMediaPlayer();
+  //  gameoversound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\gameover sound.mp3");
 
-    enemy = p;
-    QGraphicsPixmapItem * image1;
+
     setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\34d58435-aee2-489c-8a80-3a08bb91933b_Assignment 2 - Game (4).zip.33b\\chicken.png").scaled(80, 80));
-
     setPos(500,0);
 
     //  Moving the enemies downwards every 50 milli second **
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
-
 }
 
 void Enemy:: move()
@@ -60,10 +57,10 @@ void Enemy::collide()
             {
                 game_over*  gameOver = new game_over;
                 gameOver->show();
-                if (chickensound-> state()==QMediaPlayer :: PlayingState){
-                 chickensound->setPos(0);
-               }
-                else  chickensound -> play();
+              //  if (chickensound-> state()==QMediaPlayer :: PlayingState){
+               //  chickensound->setPos(0);
+             //  }
+              //  else  chickensound -> play();
 
                 return;
             }

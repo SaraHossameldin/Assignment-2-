@@ -17,7 +17,7 @@ class Enemy: public QObject , public QGraphicsPixmapItem
     // QMediaPlayer* gameoversound;
     Player* rect;
 public:
-    Enemy(Player* p);
+    Enemy(Player *);
 
 public slots:
     void move();

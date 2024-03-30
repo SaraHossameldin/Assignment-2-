@@ -1,6 +1,6 @@
 
 #include"bullet.h"
-#include <QMediaPlayer>
+//#include <QMediaPlayer>
 
 Bullet::Bullet(Player* p):QObject(), QGraphicsPixmapItem() {
 
@@ -29,10 +29,10 @@ void Bullet:: move()
             scene()->removeItem(this);
             delete colliding_items[i];
             delete this;
-            if (chickensound-> state()==QMediaPlayer :: PlayingState){
-                chickensound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\chicken sound.mp3");
-            }
-           else  chickensound -> play();
+            //if (chickensound-> state()==QMediaPlayer :: PlayingState){
+              //  chickensound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\chicken sound.mp3");
+           // }
+          // else  chickensound -> play();
             return;
         }
 

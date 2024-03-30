@@ -2,9 +2,9 @@
 #include "player.h"
 #include<QKeyEvent>
 
-#include <QMediaPlayer>
+//#include <QMediaPlayer>
 
-player::player(QGraphicsScene* scene)
+Player::Player(QGraphicsScene* scene)
 {
 
     this->scene = scene;
@@ -30,8 +30,8 @@ health_score* Player :: get_health (){
 }
 void Player::keyPressEvent(QKeyEvent *event)
 {
-    bulletsound = new QMediaPlayer();
-    bullet->setMedia("C:\\Users\\sarah\\AppData\\Local\\Temp\\10e8baf5-a2cb-4206-9176-a93fffc69ec3_Assignment 2 - Game (4).zip.ec3\\red_laser.png");
+  //  bulletsound = new QMediaPlayer();
+  //  bullet->setMedia("C:\\Users\\sarah\\AppData\\Local\\Temp\\10e8baf5-a2cb-4206-9176-a93fffc69ec3_Assignment 2 - Game (4).zip.ec3\\red_laser.png");
 
 
     if(event->key()== Qt::Key_Left)
@@ -62,11 +62,11 @@ void Player::keyPressEvent(QKeyEvent *event)
 
 
         //(BONUS) sound
-        if (bulletsound-> state()==QMediaPlayer :: PlayingState)
-        {
-           bulletsound->setPos(0);
-        }
-        else  bulletsound -> play();
+       // if (bulletsound-> state()==QMediaPlayer :: PlayingState)
+       // {
+       //    bulletsound->setPos(0);
+       // }
+      //  else  bulletsound -> play();
     }
 
 
