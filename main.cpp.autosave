@@ -1,0 +1,79 @@
+#include "player.h"
+
+#include <QApplication>
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include<QGraphicsView>
+
+#include <QTimer>
+#include <QDebug>
+#include <QBrush>
+#include <QMediaPlayer>
+
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    
+    // scene 
+    QGraphicsScene scene;
+    scene->setSceneRect(0,0,800,800);
+    
+    
+    
+    //view
+    QGraphicsView view;
+    view->setFixedSize(800,600);
+    view.setScene(&scene);
+    view.show();
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    
+   
+    C:\U
+    
+    //Object of type Player 
+    Player * play = new Player(scene);
+    // rect->setPixmap(Pixmap2);
+    // rect->setPixmap(QPixmap("C:\\Users\sarah\AppData\Local\Temp\ecb2720d-aa14-48d1-bc98-2c9172813b3a_Assignment 2 - Game (4).zip.b3a\ship.png"));
+    // rect->setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\ecb2720d-aa14-48d1-bc98-2c9172813b3a_Assignment 2 - Game (4).zip.b3a\\ship.png").scaled(80, 80));
+    
+//adding the player to the scene
+    scene->addItem(play);
+    play -> setPos(10, 450);
+    
+    
+    view->setScene(scene);
+    view->show();
+    
+    
+    //making the player focusable 
+    play->setFlag(QGraphicsItem::ItemIsFocusable);
+    play->setFocus();
+    
+    // *******  Adjust the location of the Player (middle of the screen) ********
+    rect->setPos(view->width()/2, view->height()- rect->y() + 330);
+    
+    
+    
+    // *******  Create the Enemies automatically ********
+    QTimer * time = new QTimer();
+    QObject::connect(time, SIGNAL(timeout()),rect,SLOT(createEnemy()));
+    time->start(2000);
+    
+    
+    //score
+    // health_score* score = rect->get_score();
+    // scene -> addItem(score);
+    
+    // health_score* health = rect->get_health();
+    // health-> setPos(health->x(),health->y()+25);
+    // scene -> addItem(health);
+    // qDebug() << "HEY THERE";
+    
+     // (Bonus) laser sound 
+    QMediaPlayer* bullet = new QMediaPlayer();
+    bullet->setMedia(":/soundssss/laser sound.mp3");
+    bullet -> play();
+    
+    return a.exec();
+}
