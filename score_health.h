@@ -1,10 +1,17 @@
-#ifndef SCORE_HEALTH_H
-#define SCORE_HEALTH_H
+#ifndef HEALTH_SCORE_H
+#define HEALTH_SCORE_H
 
-class Score_Health
-{
+#include <QGraphicsTextItem>
+#include <QFont>
+class health_score: public QGraphicsTextItem{
 public:
-    Score_Health();
+    health_score(QGraphicsItem * parent= nullptr, int x = 0);
+    void decrease();
+    int getHealth();
+    void increase();
+    int getScore();
+private:
+    int health;
+    int score;
 };
-
-#endif // SCORE_HEALTH_H
+#endif // HEALTH_SCORE_H

@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include "bullet.h"
-#include "health_score.h"
+#include "score_health.h"
 #include <QDebug>
 #include <QGraphicsPixmapItem>
 #include <QMediaPlayer>

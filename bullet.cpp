@@ -3,30 +3,20 @@
 
 Bullet::Bullet(Player* p):QObject(), QGraphicsPixmapItem() {
 
-    // chickensound = new QMediaPlayer();
-    // chickensound->setMedia(":/sounds/chicken sound.mp3");
+
     rect = p;
-    // QGraphicsPixmapItem * pixmap3 = new QGraphicsPixmapItem();
-    /*QPixmap Pixmap3(":/new/prefix1/red laser.png")*/;
-    // Pixmap3./*scaled(5, 30)*/;
-    // pixmap3->setPixmap(Pixmap3);
 
-    setPixmap(QPixmap(":/new/prefix1/red laser.png").scaled(5, 30));
-    // QPixmap(QPixmap(":/new/prefix1/red laser.png").scaled(5, 30));
-    // *  Setting the bullets' size
-    //setRect(0,0,10,50);
+    setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\45db8745-296d-42a2-8e87-0b19d41be934_Assignment 2 - Game (4).zip.934\\red_laser.png").scaled(5, 30));
 
-    // *  Generating the Bullets automatically
+
+    // generating bullets every 50 ms
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
 }
 
-// Move function is used to 1-  move the bullet upwards
-// 2- Handle the collision of the bullets with enemies
-void Bullet:: move(){
-    // qDebug() << "you";
-    // *  Getting the colliding items with the Bullet
+void Bullet:: move()
+{
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i=0, n=colliding_items.size(); i<n; ++i)
     {
@@ -39,7 +29,7 @@ void Bullet:: move(){
             delete colliding_items[i];
             delete this;
             if (chickensound-> state()==QMediaPlayer :: PlayingState){
-                chickensound->setMedia(":/soundssss/chicken sound.mp3");
+                chickensound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\chicken sound.mp3");
             }
             else  chickensound -> play();
             return;
@@ -47,7 +37,7 @@ void Bullet:: move(){
 
     }
 
-    // *  Moving the bullets upward
+    // Moving the bullets upwards
     setPos(x(),y()-10);
     if(pos().y()+rect->y()<0)
     {

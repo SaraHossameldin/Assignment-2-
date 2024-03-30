@@ -7,8 +7,7 @@
 #include <QTimer>
 #include <QDebug>
 #include "player.h"
-#include "ui_game_over.h"
-#include"game_over.h"
+#include"gameover.h"
 #include <QMediaPlayer>
 
 

@@ -1,32 +1,25 @@
 #include "enemy.h"
 
 
-Enemy::Enemy(Player* p) {
-    // <<<<<<< HEAD
-
+Enemy::Enemy(Player* p)
+{
+    //to add the sound
     gameoversound = new QMediaPlayer();
-    gameoversound->setMedia(":/soundssss/gameover sound.mp3");
+    gameoversound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\gameover sound.mp3");
 
-    rect = p;
-    // QGraphicsPixmapItem * pixmap1;
-    // QPixmap Pixmap1(":/images/Chicken.png");
+    enemy = p;
+    QGraphicsPixmapItem * image1;
+    setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\34d58435-aee2-489c-8a80-3a08bb91933b_Assignment 2 - Game (4).zip.33b\\chicken.png").scaled(80, 80));
 
-    ;
-    setPixmap(QPixmap(":/new/prefix1/Chicken.png").scaled(80, 80));
-    // *  Setting the size of the enemy **
-    // setRect(0,0,100,100);
+    setPos(500,0);
 
-    // *  Setting the postion of the enemy within the view dimensions
-    int random_number = rand() % 700;
-    setPos(random_number,0);
-
-    // *  Moving the enemies downwards automatically every 50 milli second **
+    //  Moving the enemies downwards every 50 milli second **
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
 
 }
-// Function move: move the enemy downwards untill the end of the scene then remove it and delete it
+
 void Enemy:: move()
 {
     setPos(x(),y()+5);
@@ -56,14 +49,8 @@ void Enemy::collide()
     {
         if(typeid(*(colliding_items[i])) == typeid(Player))
         {
-            qDebug() << "HEYYYY";
-            // scene()->removeItem(colliding_items[i]);
             Player* rect = dynamic_cast<Player*> (colliding_items[i]);
             scene()->removeItem(this);
-            qDebug() << "HEYYYY";
-            // delete colliding_items[i];
-            //score
-
             delete this;
 
             rect->decrease_health();
@@ -78,7 +65,7 @@ void Enemy::collide()
 
                 return;
             }
-            // scene() -> removeItem(rect);
+
         }
     }
 }
