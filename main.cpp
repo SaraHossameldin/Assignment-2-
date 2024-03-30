@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     //view
     QGraphicsView *view = new QGraphicsView(scene);
-    view->setFixedSize(800,600);
+    view->setFixedSize(800,800);
     view->show();
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
   //Pointer of type Player
     Player* play =new Player (scene);
-    play->setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\ecb2720d-aa14-48d1-bc98-2c9172813b3a_Assignment 2 - Game (4).zip.b3a\\ship.png").scaled(80, 80));
+    play->setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\ecb2720d-aa14-48d1-bc98-2c9172813b3a_Assignment 2 - Game (4).zip.b3a\\ship.png").scaled(50, 50));
     scene->addItem(play);
     play->setPos(10, 450);
 
