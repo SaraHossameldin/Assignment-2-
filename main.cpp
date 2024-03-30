@@ -15,26 +15,25 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
     // scene
-    QGraphicsScene scene;
-    scene.setSceneRect(0,0,800,800);
+    QGraphicsScene* scene=new QGraphicsScene();
+    scene->setSceneRect(0,0,800,800);
 
 
 
     //view
-    QGraphicsView view;
-    view.setFixedSize(800,600);
-    view.setScene(&scene);
-    view.show();
-    view.setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view.setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    QGraphicsView *view = new QGraphicsView(scene);
+    view->setFixedSize(800,600);
+    view->show();
+    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
 
 
 
-  //Object of type Player
-    Player* play=new Player (*scene);
+  //Pointer of type Player
+    Player* play =new Player (scene);
     play->setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\ecb2720d-aa14-48d1-bc98-2c9172813b3a_Assignment 2 - Game (4).zip.b3a\\ship.png").scaled(80, 80));
-    scene.addItem(play);
+    scene->addItem(play);
     play->setPos(10, 450);
 
 
@@ -53,13 +52,13 @@ int main(int argc, char *argv[])
 
     //score
      health_score* score =play->get_score();
-     scene.addItem(score);
+    scene->addItem(score);
 
 
      //health
     health_score* health= play->get_health();
      health->setPos(100,100);
-     scene.addItem(health);
+    scene->addItem(health);
 
      // (Bonus) laser sound
    // QMediaPlayer* bullet = new QMediaPlayer();

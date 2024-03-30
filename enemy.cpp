@@ -1,6 +1,8 @@
 
 #include "enemy.h"
 //#include <QMediaPlayer>
+#include<QMessageBox>
+#include<QString>
 
 
 Enemy::Enemy(Player *)
@@ -55,8 +57,11 @@ void Enemy::collide()
             rect->decrease_health();
             if(rect-> get_health()->getHealth() < 1)
             {
-                game_over*  gameOver = new game_over;
-                gameOver->show();
+               //Display game over message
+
+                QMessageBox *msg = new QMessageBox;
+               msg->setText("Game Over");
+
               //  if (chickensound-> state()==QMediaPlayer :: PlayingState){
                //  chickensound->setPos(0);
              //  }

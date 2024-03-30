@@ -11,7 +11,6 @@ CONFIG += c++17
 SOURCES += \
     bullet.cpp \
     enemy.cpp \
-    gameover.cpp \
     main.cpp \
     mainwindow.cpp \
     player.cpp \
@@ -20,7 +19,6 @@ SOURCES += \
 HEADERS += \
     bullet.h \
     enemy.h \
-    gameover.h \
     mainwindow.h \
     player.h \
     score_health.h
