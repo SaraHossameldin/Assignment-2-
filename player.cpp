@@ -8,7 +8,7 @@ Player::Player(QGraphicsScene* scene)
 {
 
     this->scene = scene;
-    setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\e3e921d7-6f39-4fa4-a07f-a6e0f2805ba7_Assignment 2 - Game (4).zip.ba7\\ship.png").scaled(80, 80));
+    setPixmap(QPixmap("C:\\Users\\sarah\\Downloads\\Images\\download.jpeg").scaled(80, 80));
     score = new health_score(nullptr, 2);
     health = new health_score(nullptr, 1);
 
@@ -45,12 +45,12 @@ void Player::keyPressEvent(QKeyEvent *event)
     }
     else if(event->key()== Qt::Key_Up)
     {
-            setPos(x()+50,y());
+            setPos(x(), y()-50);
     }
     else if(event->key()== Qt::Key_Down)
 
     {
-            setPos(x()+50,y());
+            setPos(x(),y()+50);
     }
     else if(event->key()== Qt::Key_Space)
     {
@@ -83,7 +83,10 @@ void Player::increase_score()
 
 //enemy
 void Player::createEnemy()
-{ Enemy* enemy = new Enemy(this);
-    scene->addItem(enemy);
+{
+    if (this->get_health()->getHealth() < 1)
+        return;
+    Enemy* enemy = new Enemy(this);
+    this->scene->addItem(enemy);
 
 }

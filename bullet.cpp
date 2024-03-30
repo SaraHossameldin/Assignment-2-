@@ -7,7 +7,7 @@ Bullet::Bullet(Player* p):QObject(), QGraphicsPixmapItem() {
 
     rect = p;
 
-    setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\45db8745-296d-42a2-8e87-0b19d41be934_Assignment 2 - Game (4).zip.934\\red_laser.png").scaled(5, 30));
+    setPixmap(QPixmap("C:\\Users\\sarah\\Downloads\\Images\\red_laser.png").scaled(5, 30));
 
 
     // generating bullets every 50 ms

@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 
   //Pointer of type Player
     Player* play =new Player (scene);
-    play->setPixmap(QPixmap("C:\\Users\\sarah\\AppData\\Local\\Temp\\ecb2720d-aa14-48d1-bc98-2c9172813b3a_Assignment 2 - Game (4).zip.b3a\\ship.png").scaled(50, 50));
+    play->setPixmap(QPixmap("C:\\Users\\sarah\\Downloads\\Images\\download.jpeg").scaled(50, 50));
     scene->addItem(play);
     play->setPos(10, 450);
 
@@ -51,14 +51,14 @@ int main(int argc, char *argv[])
 
 
     //score
-     health_score* score =play->get_score();
-    scene->addItem(score);
+    //health_score* score =play->get_score();
+    //scene->addItem(score);
 
 
      //health
-    health_score* health= play->get_health();
-     health->setPos(100,100);
-    scene->addItem(health);
+    //health_score* health= play->get_health();
+  //   health->setPos(100,100);
+    ///scene->addItem(health);
 
      // (Bonus) laser sound
    // QMediaPlayer* bullet = new QMediaPlayer();
