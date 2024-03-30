@@ -10,7 +10,7 @@ Bullet::Bullet(Player* p):QObject(), QGraphicsPixmapItem() {
     setPixmap(QPixmap("C:\\Users\\sarah\\Downloads\\Images\\red_laser.png").scaled(5, 30));
 
 
-    // generating bullets every 50 ms
+    // generating bullets
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);

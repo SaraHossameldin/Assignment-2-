@@ -15,10 +15,10 @@ Enemy::Enemy(Player *pPlayer)
   //  gameoversound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\gameover sound.mp3");
 
 
-    setPixmap(QPixmap("C:\\Users\\sarah\\Downloads\\Images\\chicken.png").scaled(80, 80));
+    setPixmap(QPixmap("C:\\Users\\sarah\\Downloads\\Images\\chicken.jpg").scaled(80, 80));
     setPos(((int)(rand()% 10)) * 80,100);
 
-    //  Moving the enemies downwards every 50 milli second **
+    //  Moving the enemies downwards every 50 milli second
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(500);
@@ -31,7 +31,6 @@ void Enemy:: move()
     setPos(x(),y()+5);
     if(y()>1000)
     {
-        //rect->decrease_health();
         scene()->removeItem(this);
         delete this;
     } else this->collide();
@@ -42,21 +41,6 @@ void Enemy:: move()
 
 void Enemy::collide()
 {
-   /* if (abs(x() - rect->x()) < 80 && abs(y() - rect->y()) < 80)
-    {
-        scene()->removeItem(this);
-        rect->decrease_health();
-        if(rect->get_health()->getHealth() < 1)
-        {
-            //Display game over message
-            QMessageBox *msg = new QMessageBox;
-            msg->setText("Game Over");
-            msg->show();
-
-        }
-        delete this;
-    }
-    */
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for(int i=0, n=colliding_items.size(); i<n; ++i)
     {
