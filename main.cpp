@@ -4,7 +4,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include<QGraphicsView>
-#include<QMediaPlayer>
+#include <QMediaPlayer>
 #include <QTimer>
 #include <QDebug>
 #include <QBrush>

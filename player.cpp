@@ -1,6 +1,7 @@
 
 #include "player.h"
 #include<QKeyEvent>
+#include <QMediaPlayer>
 
 player::player(QGraphicsScene* scene)
 {

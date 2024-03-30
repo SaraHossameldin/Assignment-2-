@@ -1,4 +1,5 @@
 #include "enemy.h"
+#include <QMediaPlayer>
 
 
 Enemy::Enemy(Player* p)

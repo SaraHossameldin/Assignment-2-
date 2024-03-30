@@ -1,5 +1,5 @@
 #include"bullet.h"
-
+#include <QMediaPlayer>
 
 Bullet::Bullet(Player* p):QObject(), QGraphicsPixmapItem() {
 
