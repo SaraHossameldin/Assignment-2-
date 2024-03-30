@@ -1,3 +1,4 @@
+
 #include"bullet.h"
 #include <QMediaPlayer>
 
@@ -31,7 +32,7 @@ void Bullet:: move()
             if (chickensound-> state()==QMediaPlayer :: PlayingState){
                 chickensound->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\chicken sound.mp3");
             }
-            else  chickensound -> play();
+           else  chickensound -> play();
             return;
         }
 

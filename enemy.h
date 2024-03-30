@@ -8,7 +8,7 @@
 #include <QDebug>
 #include "player.h"
 #include"gameover.h"
-#include <QMediaPlayer>
+//#include <QMediaPlayer>
 
 
 class Player;

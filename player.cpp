@@ -1,6 +1,7 @@
 
 #include "player.h"
 #include<QKeyEvent>
+
 #include <QMediaPlayer>
 
 player::player(QGraphicsScene* scene)
@@ -63,7 +64,7 @@ void Player::keyPressEvent(QKeyEvent *event)
         //(BONUS) sound
         if (bulletsound-> state()==QMediaPlayer :: PlayingState)
         {
-            bulletsound->setPos(0);
+           bulletsound->setPos(0);
         }
         else  bulletsound -> play();
     }

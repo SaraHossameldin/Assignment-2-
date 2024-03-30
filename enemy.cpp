@@ -1,3 +1,4 @@
+
 #include "enemy.h"
 #include <QMediaPlayer>
 
@@ -60,8 +61,8 @@ void Enemy::collide()
                 game_over*  gameOver = new game_over;
                 gameOver->show();
                 if (chickensound-> state()==QMediaPlayer :: PlayingState){
-                    chickensound->setPos(0);
-                }
+                 chickensound->setPos(0);
+               }
                 else  chickensound -> play();
 
                 return;

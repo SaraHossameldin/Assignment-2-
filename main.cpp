@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
      // (Bonus) laser sound
     QMediaPlayer* bullet = new QMediaPlayer();
     bullet->setMedia("C:\\Users\\sarah\\Desktop\\Chicken_Invaders_Assignment_Sara_&_Menna\\laser sound.mp3");
-    bullet -> play();
+   bullet -> play();
 
     return a.exec();
 }
